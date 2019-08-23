@@ -3,7 +3,8 @@
 [![Build Status](https://travis-ci.org/alexeynobody/translit-dart.svg?branch=master)](https://travis-ci.org/alexeynobody/translit-dart)
 
 Simple dart package for converting Cyrillic symbols to Translit and back
-No dependencies
+
+Reverse transliteration into Cyrillic can not always completely convert the text to the original. Please keep this in mind when using this module in your projects.
 
 ## Examples
 
