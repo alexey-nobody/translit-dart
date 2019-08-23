@@ -82,6 +82,8 @@ class Translit {
   };
 
   String unTranslit({String source}) {
+    if (source == null || source.isEmpty) return source;
+
     List<String> sourceSymbols = new List();
     List<String> unTranslit = new List();
 
@@ -108,7 +110,7 @@ class Translit {
   }
 
   String toTranslit({String source}) {
-    if (source.length == 0) return "";
+    if (source == null || source.isEmpty) return source;
 
     List<String> translit = new List();
     List<String> sourceSymbols = new List();
