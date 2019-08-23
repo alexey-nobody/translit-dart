@@ -2,10 +2,8 @@ name: translit
 description: Simple dart package for converting Cyrillic symbols to Translit and back
 version: 1.0.0
 
-author:
-  - Alexey Lepskii <alexey.lepskii@gmail.com>
-homepage:
-  - https://github.com/alexeynobody/translit-dart
+author: Alexey Lepskii <alexey.lepskii@gmail.com>
+homepage: https://github.com/alexeynobody/translit-dart
 
 environment:
   sdk: ">=2.2.0 <3.0.0"
