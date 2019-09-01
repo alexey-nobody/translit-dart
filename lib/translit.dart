@@ -84,12 +84,19 @@ class Translit {
   String unTranslit({String source}) {
     if (source == null || source.isEmpty) return source;
 
+    RegExp regExp = new RegExp(
+      r"([a-z]+)",
+      caseSensitive: false,
+      multiLine: true,
+    );
+
+    if (!regExp.hasMatch(source)) return source;
+
     List<String> sourceSymbols = new List();
     List<String> unTranslit = new List();
 
     Map deTransliteratedSymbol = new Map();
 
-    // replace complicated symbols
     _complicatedSymbols.forEach((key, value) {
       source = source.replaceAll(value, key);
     });
@@ -112,13 +119,19 @@ class Translit {
   String toTranslit({String source}) {
     if (source == null || source.isEmpty) return source;
 
+    RegExp regExp = new RegExp(
+      r"([а-я]+)",
+      caseSensitive: false,
+      multiLine: true,
+    );
+
+    if (!regExp.hasMatch(source)) return source;
+
     List<String> translit = new List();
     List<String> sourceSymbols = new List();
 
-    // to translit
     sourceSymbols = source.split("");
 
-    // merge map of symbols
     _transliteratedSymbol.addAll(_complicatedSymbols);
 
     for (final element in sourceSymbols) {

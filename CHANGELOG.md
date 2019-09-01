@@ -1,3 +1,7 @@
+## 1.0.2
+
+- added regular expression in methods toTranslit and unTranslit for early return in case of non-compliance
+
 ## 1.0.1
 
 - added null checks in methods toTranslit and unTranslit
