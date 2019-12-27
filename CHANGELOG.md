@@ -1,3 +1,7 @@
+## 1.0.3
+
+- resolve warnings in pub.dev
+
 ## 1.0.2
 
 - added regular expression in methods toTranslit and unTranslit for early return in case of non-compliance
