@@ -92,10 +92,9 @@ class Translit {
 
     if (!regExp.hasMatch(source)) return source;
 
-    List<String> sourceSymbols = List();
-    List<String> unTranslit = List();
-
-    Map deTransliteratedSymbol = Map();
+    var sourceSymbols = [];
+    var unTranslit = [];
+    var deTransliteratedSymbol = {};
 
     _complicatedSymbols.forEach((key, value) {
       source = source.replaceAll(value, key);
@@ -127,8 +126,8 @@ class Translit {
 
     if (!regExp.hasMatch(source)) return source;
 
-    List<String> translit = List();
-    List<String> sourceSymbols = List();
+    var translit = [];
+    var sourceSymbols = [];
 
     sourceSymbols = source.split('');
 
