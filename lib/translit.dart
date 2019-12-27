@@ -1,7 +1,7 @@
 library translit;
 
 class Translit {
-  static final Translit _translit = new Translit._internal();
+  static final Translit _translit = Translit._internal();
 
   factory Translit() {
     return _translit;
@@ -9,7 +9,7 @@ class Translit {
 
   Translit._internal();
 
-  Map _transliteratedSymbol = {
+  final Map _transliteratedSymbol = {
     'А': 'A',
     'Б': 'B',
     'В': 'V',
@@ -60,7 +60,7 @@ class Translit {
     '"': '',
   };
 
-  Map _complicatedSymbols = {
+  final Map _complicatedSymbols = {
     'Ё': 'Yo',
     'Ж': 'Zh',
     'Щ': 'Shhch',
@@ -84,7 +84,7 @@ class Translit {
   String unTranslit({String source}) {
     if (source == null || source.isEmpty) return source;
 
-    RegExp regExp = new RegExp(
+    var regExp = RegExp(
       r"([a-z]+)",
       caseSensitive: false,
       multiLine: true,
