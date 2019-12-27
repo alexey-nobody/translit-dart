@@ -85,7 +85,7 @@ class Translit {
     if (source == null || source.isEmpty) return source;
 
     var regExp = RegExp(
-      r"([a-z]+)",
+      r'([a-z]+)',
       caseSensitive: false,
       multiLine: true,
     );
@@ -118,7 +118,7 @@ class Translit {
   String toTranslit({String source}) {
     if (source == null || source.isEmpty) return source;
 
-    var regExp = new RegExp(
+    var regExp = RegExp(
       r'([а-я]+)',
       caseSensitive: false,
       multiLine: true,
