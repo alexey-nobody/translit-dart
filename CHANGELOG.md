@@ -1,4 +1,4 @@
-## 1.0.3
+## 1.0.4
 
 - resolve warnings in pub.dev
 
