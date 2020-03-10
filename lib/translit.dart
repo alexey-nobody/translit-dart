@@ -82,7 +82,7 @@ class Translit {
   };
 
   ///
-  /// Method for converting from translit [source] type of [String]
+  /// Method for converting from translit for the [source] value
   ///
   String unTranslit({String source}) {
     if (source == null || source.isEmpty) return source;
@@ -120,7 +120,7 @@ class Translit {
 
 
   ///
-  /// Method for converting to translit [source] type of [String]
+  /// Method for converting to translit for the [source] value 
   ///
   String toTranslit({String source}) {
     if (source == null || source.isEmpty) return source;
