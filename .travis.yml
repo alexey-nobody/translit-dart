@@ -1,8 +1,9 @@
 language: dart
 
 dart:
-  - dev
+  - stable
   - 2.2.0
 
 script:
   - pub run test
+  - dartanalyzer: --fatal-warnings lib
