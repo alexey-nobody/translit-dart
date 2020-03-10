@@ -1,3 +1,7 @@
+## 1.2.1
+
+- minor fixes
+
 ## 1.2.0
 
 - update CI rules
