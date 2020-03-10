@@ -1,3 +1,8 @@
+## 1.2.0
+
+- update CI rules
+- added documentation for public methods
+
 ## 1.1.0
 
 - resolve warnings in pub.dev
