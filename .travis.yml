@@ -5,6 +5,6 @@ dart:
   - 2.2.0
 
 dart_task:
-  - dartfmt
+  - dartfmt: true
   - dartanalyzer: --fatal-warnings lib
   - test
