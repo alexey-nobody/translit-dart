@@ -6,4 +6,5 @@ dart:
 
 script:
   - pub run test
-  - dartanalyzer: --fatal-warnings lib
+
+dartanalyzer: --fatal-warnings lib
