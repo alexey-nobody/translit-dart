@@ -118,9 +118,8 @@ class Translit {
     return unTranslit.join();
   }
 
-
   ///
-  /// Method for converting to translit for the [source] value 
+  /// Method for converting to translit for the [source] value
   ///
   String toTranslit({String source}) {
     if (source == null || source.isEmpty) return source;
