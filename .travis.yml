@@ -10,8 +10,6 @@ dart_task:
 matrix:
   include:
     - dart: stable
-      dart_task: dartfmt
-    - dart: stable
       dart_task: analyzer
 
 branches:
