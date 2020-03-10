@@ -81,6 +81,9 @@ class Translit {
     'я': 'ya',
   };
 
+  ///
+  /// Method for converting from translit [source] type of [String]
+  ///
   String unTranslit({String source}) {
     if (source == null || source.isEmpty) return source;
 
@@ -115,6 +118,10 @@ class Translit {
     return unTranslit.join();
   }
 
+
+  ///
+  /// Method for converting to translit [source] type of [String]
+  ///
   String toTranslit({String source}) {
     if (source == null || source.isEmpty) return source;
 
