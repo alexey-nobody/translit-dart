@@ -5,6 +5,18 @@ dart:
   - 2.2.0
 
 dart_task:
-  - dartfmt: true
-  - dartanalyzer: --fatal-warnings lib
   - test
+  
+matrix:
+  include:
+    - dart: stable
+      dart_task: dartfmt
+    - dart: stable
+      dart_task: analyzer
+
+branches:
+  only: [master]
+
+cache:
+  directories:
+    - $HOME/.pub-cache
