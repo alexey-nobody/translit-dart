@@ -4,7 +4,7 @@ dart:
   - stable
   - 2.2.0
 
-script:
-  - pub run test
-
-dartanalyzer: --fatal-warnings lib
+dart_task:
+  - dartfmt
+  - dartanalyzer: --fatal-warnings lib
+  - test
