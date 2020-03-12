@@ -18,7 +18,7 @@ Translit().toTranslit(source: 'Привет мир');
 >Privet mir!
 ```
 
-### Convert text from translited
+### Convert text from transliterated
 
 ```dart
 import 'package:translit/translit.dart';
