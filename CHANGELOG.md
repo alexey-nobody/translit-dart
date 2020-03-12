@@ -1,3 +1,6 @@
+## 1.2.2
+- update README
+
 ## 1.2.1
 
 - minor fixes
