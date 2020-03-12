@@ -13,20 +13,21 @@ Reverse transliteration into Cyrillic can not always completely convert the text
 ```dart
 import 'package:translit/translit.dart';
 
-Translit().toTranslit(source: 'Привет мир');
-
->Privet mir!
+String text = Translit().toTranslit(source: 'Привет мир');
 ```
+
+Привет мир > Privet mir!
+
 
 ### Convert text from transliterated
 
 ```dart
 import 'package:translit/translit.dart';
 
-Translit().unTranslit(source: 'Privet mir');
-
->Привет мир!
+String text = Translit().unTranslit(source: 'Privet mir');
 ```
+
+Privet mir > Привет мир!
 
 ## Contribute
 
