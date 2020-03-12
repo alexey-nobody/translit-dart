@@ -8,14 +8,26 @@ Reverse transliteration into Cyrillic can not always completely convert the text
 
 ## Examples
 
-```dart
-  Translit().toTranslit(source: 'Привет мир');
-
-  >Privet mir!
-```
+### Convert text to translit
 
 ```dart
-  Translit().unTranslit(source: 'Privet mir');
+import 'package:translit/translit.dart';
 
-  >Привет мир!
+Translit().toTranslit(source: 'Привет мир');
+
+>Privet mir!
 ```
+
+### Convert text from translited
+
+```dart
+import 'package:translit/translit.dart';
+
+Translit().unTranslit(source: 'Privet mir');
+
+>Привет мир!
+```
+
+## Contribute
+
+Please feel free to fork, improve, make pull requests or fill issues. I'll be glad to fix bugs you encountered or improve the extension.
