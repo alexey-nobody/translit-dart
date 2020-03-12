@@ -27,7 +27,7 @@ import 'package:translit/translit.dart';
 String text = Translit().unTranslit(source: 'Privet mir');
 ```
 
-Privet mir > Привет мир!
+Privet mir > Привет мир
 
 ## Contribute
 
