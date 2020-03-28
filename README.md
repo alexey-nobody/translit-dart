@@ -1,6 +1,7 @@
 # About
 
 [![Build Status](https://travis-ci.org/alexeynobody/translit-dart.svg?branch=master)](https://travis-ci.org/alexeynobody/translit-dart)
+[![Pub Package](https://img.shields.io/pub/v/translit.svg)](https://pub.dartlang.org/packages/translit)
 
 Simple dart package for converting Cyrillic symbols to Translit and back
 
