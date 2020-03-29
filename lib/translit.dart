@@ -1,14 +1,7 @@
 library translit;
 
+/// Simple dart package for converting Cyrillic symbols to Translit and back
 class Translit {
-  static final Translit _translit = Translit._internal();
-
-  factory Translit() {
-    return _translit;
-  }
-
-  Translit._internal();
-
   final Map _transliteratedSymbol = {
     'А': 'A',
     'Б': 'B',
@@ -81,9 +74,7 @@ class Translit {
     'я': 'ya',
   };
 
-  ///
   /// Method for converting from translit for the [source] value
-  ///
   String unTranslit({String source}) {
     if (source == null || source.isEmpty) return source;
 
@@ -118,9 +109,7 @@ class Translit {
     return unTranslit.join();
   }
 
-  ///
   /// Method for converting to translit for the [source] value
-  ///
   String toTranslit({String source}) {
     if (source == null || source.isEmpty) return source;
 
