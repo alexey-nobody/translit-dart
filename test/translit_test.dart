@@ -3,15 +3,17 @@ import 'package:translit/translit.dart';
 
 void main() {
   test('words translit', () {
-    expect(Translit().toTranslit(source: 'привет мир'), 'privet mir');
-    expect(Translit().toTranslit(source: 'Изъять'), 'Iz"yat\'');
-    expect(Translit().toTranslit(source: 'Объект'), 'Ob"ekt');
+    Translit translit = Translit();
+    expect(translit.toTranslit(source: 'привет мир'), 'privet mir');
+    expect(translit.toTranslit(source: 'Изъять'), 'Iz"yat\'');
+    expect(translit.toTranslit(source: 'Объект'), 'Ob"ekt');
   });
 
   test('words untranslit', () {
-    expect(Translit().unTranslit(source: 'privet mir'), 'привет мир');
-    expect(Translit().unTranslit(source: 'Iz"yat\''), 'Изъять');
-    expect(Translit().unTranslit(source: 'Ob"ekt'), 'Объект');
+    Translit translit = Translit();
+    expect(translit.unTranslit(source: 'privet mir'), 'привет мир');
+    expect(translit.unTranslit(source: 'Iz"yat\''), 'Изъять');
+    expect(translit.unTranslit(source: 'Ob"ekt'), 'Объект');
   });
 
   test(
@@ -37,9 +39,10 @@ void main() {
   );
 
   test('other', () {
-    expect(Translit().toTranslit(source: null), null);
-    expect(Translit().toTranslit(source: ""), "");
-    expect(Translit().unTranslit(source: null), null);
-    expect(Translit().unTranslit(source: ""), "");
+    Translit translit = Translit();
+    expect(translit.toTranslit(source: null), null);
+    expect(translit.toTranslit(source: ""), "");
+    expect(translit.unTranslit(source: null), null);
+    expect(translit.unTranslit(source: ""), "");
   });
 }
