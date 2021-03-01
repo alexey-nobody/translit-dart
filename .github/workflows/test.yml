@@ -1,0 +1,23 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - '*'
+      - '*/*'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v2
+
+      - name: 'Install Dart'
+        uses: dart-lang/setup-dart@v0.3
+        with:
+          sdk: beta
+
+      - run: dart pub get
+      - run: dart analyze
+      - run: dart test
