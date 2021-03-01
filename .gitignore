@@ -21,5 +21,8 @@ doc/api/
 *.ipr
 *.iws
 
+# VSCode
+.vscode/
+
 # lock files
 pubspec.lock
