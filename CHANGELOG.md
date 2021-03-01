@@ -1,3 +1,7 @@
+## 2.0.0
+- Implement null-safety
+- Refactoring
+
 ## 1.3.0
 - fix documentation
 - refactoring
