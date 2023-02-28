@@ -2,15 +2,15 @@ import 'package:test/test.dart';
 import 'package:translit/translit.dart';
 
 void main() {
+  final translit = Translit();
+
   test('words translit', () {
-    Translit translit = Translit();
     expect(translit.toTranslit(source: 'привет мир'), 'privet mir');
     expect(translit.toTranslit(source: 'Изъять'), 'Iz"yat\'');
     expect(translit.toTranslit(source: 'Объект'), 'Ob"ekt');
   });
 
   test('words untranslit', () {
-    Translit translit = Translit();
     expect(translit.unTranslit(source: 'privet mir'), 'привет мир');
     expect(translit.unTranslit(source: 'Iz"yat\''), 'Изъять');
     expect(translit.unTranslit(source: 'Ob"ekt'), 'Объект');
@@ -39,10 +39,7 @@ void main() {
   );
 
   test('other', () {
-    Translit translit = Translit();
-    expect(translit.toTranslit(source: null), null);
-    expect(translit.toTranslit(source: ""), "");
-    expect(translit.unTranslit(source: null), null);
-    expect(translit.unTranslit(source: ""), "");
+    expect(translit.toTranslit(source: ''), '');
+    expect(translit.unTranslit(source: ''), '');
   });
 }

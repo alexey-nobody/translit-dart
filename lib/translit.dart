@@ -2,7 +2,7 @@ library translit;
 
 /// Simple dart package for converting Cyrillic symbols to Translit and back
 class Translit {
-  final Map _transliteratedSymbol = {
+  final _transliteratedSymbol = <String, String>{
     'А': 'A',
     'Б': 'B',
     'В': 'V',
@@ -53,7 +53,7 @@ class Translit {
     '"': '',
   };
 
-  final Map _complicatedSymbols = {
+  final _complicatedSymbols = <String, String>{
     'Ё': 'Yo',
     'Ж': 'Zh',
     'Щ': 'Shhch',
@@ -75,8 +75,8 @@ class Translit {
   };
 
   /// Method for converting from translit for the [source] value
-  String unTranslit({String source}) {
-    if (source == null || source.isEmpty) return source;
+  String unTranslit({required String source}) {
+    if (source.isEmpty) return source;
 
     var regExp = RegExp(
       r'([a-z]+)',
@@ -86,34 +86,35 @@ class Translit {
 
     if (!regExp.hasMatch(source)) return source;
 
-    var sourceSymbols = [];
-    var unTranslit = [];
-    var deTransliteratedSymbol = {};
+    final sourceSymbols = <String>[];
+    final unTranslit = <String>[];
+    var deTransliteratedSymbol = <String, String>{};
 
     _complicatedSymbols.forEach((key, value) {
       source = source.replaceAll(value, key);
     });
 
-    sourceSymbols = source.split('');
+    sourceSymbols.addAll(source.split(''));
 
     _transliteratedSymbol.forEach((key, value) {
       deTransliteratedSymbol[value] = key;
     });
 
     for (final element in sourceSymbols) {
-      unTranslit.add(deTransliteratedSymbol.containsKey(element)
-          ? deTransliteratedSymbol[element]
-          : element);
+      final transElement = deTransliteratedSymbol.containsKey(element)
+          ? deTransliteratedSymbol[element] ?? ''
+          : element;
+      unTranslit.add(transElement);
     }
 
     return unTranslit.join();
   }
 
   /// Method for converting to translit for the [source] value
-  String toTranslit({String source}) {
-    if (source == null || source.isEmpty) return source;
+  String toTranslit({required String source}) {
+    if (source.isEmpty) return source;
 
-    var regExp = RegExp(
+    final regExp = RegExp(
       r'([а-я]+)',
       caseSensitive: false,
       multiLine: true,
@@ -121,17 +122,16 @@ class Translit {
 
     if (!regExp.hasMatch(source)) return source;
 
-    var translit = [];
-    var sourceSymbols = [];
-
-    sourceSymbols = source.split('');
+    final translit = <String>[];
+    final sourceSymbols = <String>[...source.split('')];
 
     _transliteratedSymbol.addAll(_complicatedSymbols);
 
     for (final element in sourceSymbols) {
-      translit.add(_transliteratedSymbol.containsKey(element)
-          ? _transliteratedSymbol[element]
-          : element);
+      final transElement = _transliteratedSymbol.containsKey(element)
+          ? _transliteratedSymbol[element] ?? ''
+          : element;
+      translit.add(transElement);
     }
 
     return translit.join();
