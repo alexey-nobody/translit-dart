@@ -59,7 +59,7 @@ class Translit {
     'Щ': 'Shhch',
     'Ш': 'Shh',
     'Ч': 'Ch',
-    'Э': 'Eh\'',
+    'Э': "Eh'",
     'Ю': 'Yu',
     'Я': 'Ya',
     'ё': 'yo',
@@ -67,7 +67,7 @@ class Translit {
     'щ': 'shhch',
     'ш': 'shh',
     'ч': 'ch',
-    'э': 'eh\'',
+    'э': "eh'",
     'ъ': '"',
     'ь': "'",
     'ю': 'yu',
@@ -78,17 +78,13 @@ class Translit {
   String unTranslit({required String source}) {
     if (source.isEmpty) return source;
 
-    var regExp = RegExp(
-      r'([a-z]+)',
-      caseSensitive: false,
-      multiLine: true,
-    );
+    final regExp = RegExp('([a-z]+)', caseSensitive: false, multiLine: true);
 
     if (!regExp.hasMatch(source)) return source;
 
     final sourceSymbols = <String>[];
     final unTranslit = <String>[];
-    var deTransliteratedSymbol = <String, String>{};
+    final deTransliteratedSymbol = <String, String>{};
 
     _complicatedSymbols.forEach((key, value) {
       source = source.replaceAll(value, key);
@@ -115,7 +111,7 @@ class Translit {
     if (source.isEmpty) return source;
 
     final regExp = RegExp(
-      r'([а-я]+)',
+      '([а-я]+)',
       caseSensitive: false,
       multiLine: true,
     );
