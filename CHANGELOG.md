@@ -1,3 +1,7 @@
+## 2.0.1
+- Update documentation
+- Fixes linter warnings
+
 ## 2.0.0
 - Implement null-safety
 - Refactoring

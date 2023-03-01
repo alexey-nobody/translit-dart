@@ -1,0 +1,37 @@
+name: dev
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - main
+
+jobs:
+  test:
+    name: code quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v2
+
+      - name: 'Install Dart'
+        uses: dart-lang/setup-dart@v1
+
+      - name: 'Pub get'
+        run: dart pub get
+
+      - name: 'Analyze'
+        run: dart analyze
+
+      - name: 'Test'
+        run: dart test
+
+  package-analysis:
+    name: package points
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: axel-op/dart-package-analyzer@v3
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
