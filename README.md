@@ -15,7 +15,7 @@ Reverse transliteration into Cyrillic can not always completely convert the text
 
 ```sh
 $ dart pub add translit
-```sh
+```
 
 ```sh
 $ flutter pub add --dev translit
@@ -25,6 +25,8 @@ $ flutter pub add --dev translit
 ## Usage
 
 ### Convert text to translit
+
+By default, the conversion uses a non-symmetrical algorithm. To use the symmetrical algorithm, set the isSymmetrical parameter to true.
 
 ```dart
 String text = Translit().toTranslit(source: 'Привет мир');

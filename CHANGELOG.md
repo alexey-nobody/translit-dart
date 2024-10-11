@@ -1,34 +1,40 @@
+## 2.0.2
+- Updated project documentation for clarity and completeness.
+- Upgraded linter configuration and resolved all linter warnings.
+- Corrected transliteration rules for the letters ‘щ’ and ‘ш’.
+- Added the isSymmetrical parameter to the toTranslit method to select between symmetrical and non-symmetrical conversion algorithms.
+
 ## 2.0.1
-- Update documentation
-- Fixes linter warnings
+- Updated project documentation.
+- Fixed linter warnings.
 
 ## 2.0.0
-- Implement null-safety
-- Refactoring
+- Implemented null-safety support.
+- Refactored code for better structure and maintainability.
 
 ## 1.3.0
-- fix documentation
-- refactoring
+- Fixed issues in documentation.
+- Performed general code refactoring.
 
 ## 1.2.2
-- update README
+- Updated the README file.
 
 ## 1.2.1
-- minor fixes
+- Applied minor bug fixes.
 
 ## 1.2.0
-- update CI rules
-- added documentation for public methods
+- Updated CI configuration.
+- Added documentation for all public methods.
 
 ## 1.1.0
-- resolve warnings in pub.dev
+- Resolved warnings in pub.dev.
 
 ## 1.0.2
-- added regular expression in methods toTranslit and unTranslit for early return in case of non-compliance
+- Added regular expressions in toTranslit and unTranslit methods for early return in case of non-compliance.
 
 ## 1.0.1
-- added null checks in methods toTranslit and unTranslit
-- minor fixes
+- Added null checks in toTranslit and unTranslit methods.
+- Applied minor fixes.
 
 ## 1.0.0
-- Initial version
+- Initial release.
