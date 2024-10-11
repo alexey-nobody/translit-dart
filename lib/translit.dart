@@ -1,6 +1,6 @@
 /// Simple dart package for converting Cyrillic symbols to Translit and back
 class Translit {
-  final _transliteratedSymbol = <String, String>{
+  final _transliteratedSymbols = <String, String>{
     'А': 'A',
     'Б': 'B',
     'В': 'V',
@@ -51,7 +51,28 @@ class Translit {
     '"': '',
   };
 
-  final _complicatedSymbols = <String, String>{
+  final _complicatedSymbolsForSymmetricalConversion = <String, String>{
+    'Ё': 'Yo',
+    'Ж': 'Zh',
+    'Щ': 'Shhch',
+    'Ш': 'Shh',
+    'Ч': 'Ch',
+    'Э': "Eh'",
+    'Ю': 'Yu',
+    'Я': 'Ya',
+    'ё': 'yo',
+    'ж': 'zh',
+    'щ': 'shhch',
+    'ш': 'shh',
+    'ч': 'ch',
+    'э': "eh'",
+    'ъ': '"',
+    'ь': "'",
+    'ю': 'yu',
+    'я': 'ya',
+  };
+
+  final _complicatedSymbolsForNonSymmetricalConversion = <String, String>{
     'Ё': 'Yo',
     'Ж': 'Zh',
     'Щ': 'Shch',
@@ -91,13 +112,13 @@ class Translit {
     final unTranslit = <String>[];
     final deTransliteratedSymbol = <String, String>{};
 
-    _complicatedSymbols.forEach((key, value) {
+    _complicatedSymbolsForSymmetricalConversion.forEach((key, value) {
       source = source.replaceAll(value, key);
     });
 
     sourceSymbols.addAll(source.split(''));
 
-    _transliteratedSymbol.forEach((key, value) {
+    _transliteratedSymbols.forEach((key, value) {
       deTransliteratedSymbol[value] = key;
     });
 
@@ -119,7 +140,14 @@ class Translit {
   ///
   /// If [source] is empty, an empty string is returned.
   /// If [source] does not contain any characters in Cyrillic, [source] is returned unchanged.
-  String toTranslit({required String source}) {
+  ///
+  /// If [isSymmetrical] is set to true, the method will return a string with characters in translit
+  /// that were converted using the symmetrical algorithm. Otherwise, the method will return a string
+  /// with characters in translit that were converted using the non-symmetrical algorithm.
+  String toTranslit({
+    required String source,
+    bool isSymmetrical = false,
+  }) {
     if (source.isEmpty) return source;
 
     final regExp = RegExp(
@@ -133,11 +161,17 @@ class Translit {
     final translit = <String>[];
     final sourceSymbols = <String>[...source.split('')];
 
-    _transliteratedSymbol.addAll(_complicatedSymbols);
+    if (isSymmetrical) {
+      _transliteratedSymbols
+          .addAll(_complicatedSymbolsForSymmetricalConversion);
+    } else {
+      _transliteratedSymbols
+          .addAll(_complicatedSymbolsForNonSymmetricalConversion);
+    }
 
     for (final element in sourceSymbols) {
-      final transElement = _transliteratedSymbol.containsKey(element)
-          ? _transliteratedSymbol[element] ?? ''
+      final transElement = _transliteratedSymbols.containsKey(element)
+          ? _transliteratedSymbols[element] ?? ''
           : element;
       translit.add(transElement);
     }
