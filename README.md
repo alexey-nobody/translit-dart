@@ -26,6 +26,8 @@ $ flutter pub add --dev translit
 
 ### Convert text to translit
 
+By default, the conversion uses a non-symmetrical algorithm. To use the symmetrical algorithm, set the isSymmetrical parameter to true.
+
 ```dart
 String text = Translit().toTranslit(source: 'Привет мир');
 ```
