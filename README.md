@@ -15,7 +15,7 @@ Reverse transliteration into Cyrillic can not always completely convert the text
 
 ```sh
 $ dart pub add translit
-```sh
+```
 
 ```sh
 $ flutter pub add --dev translit
