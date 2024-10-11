@@ -72,7 +72,14 @@ class Translit {
     'я': 'ya',
   };
 
-  /// Method for converting from translit for the [source] value
+  /// Method for converting from translit to Cyrillic for the [source] value
+  ///
+  /// [source] is a string which contains the text in translit.
+  ///
+  /// The method returns a string with characters in Cyrillic.
+  ///
+  /// If [source] is empty, an empty string is returned.
+  /// If [source] does not contain any symbols in translit, [source] is returned unchanged.
   String unTranslit({required String source}) {
     if (source.isEmpty) return source;
 
@@ -104,7 +111,14 @@ class Translit {
     return unTranslit.join();
   }
 
-  /// Method for converting to translit for the [source] value
+  /// Method for converting from Cyrillic to translit for the [source] value
+  ///
+  /// [source] is a string which contains the text in Cyrillic.
+  ///
+  /// The method returns a string with characters in translit.
+  ///
+  /// If [source] is empty, an empty string is returned.
+  /// If [source] does not contain any characters in Cyrillic, [source] is returned unchanged.
   String toTranslit({required String source}) {
     if (source.isEmpty) return source;
 
